@@ -10,10 +10,10 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-20.04]
-        sourcemod-version: [1.12-dev]
+        sourcemod-version: [1.11-dev]
         include:
           - os: ubuntu-20.04
-            target-archs: x86,x86_64
+            target-archs: x86
             sdks: css
 
     steps:

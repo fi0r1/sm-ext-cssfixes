@@ -11,6 +11,7 @@ jobs:
       matrix:
         os: [ubuntu-20.04]
         sourcemod-version: [1.11-dev]
+        metamod-version: [1.11-dev]
         include:
           - os: ubuntu-20.04
             target-archs: x86
@@ -32,6 +33,13 @@ jobs:
           submodules: recursive
           path: extension
 
+      - name: Checkout Metamod
+        uses: actions/checkout@v2
+        with:
+          repository: alliedmodders/metamod-source
+          ref: ${{ matrix.metamod-version }}
+          path: 'metamod-source'
+          
       - name: Checkout SourceMod
         uses: actions/checkout@v4
         with:
